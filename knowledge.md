@@ -145,6 +145,12 @@ _______________________________________________
 
 `docker inspect --format='{{index .RepoDigests 0}}' $IMAGE`
 
+_______________________________________________
+
+- Generate MAC Address:
+
+`docker run -d --mac-address="02:42:$(openssl rand -hex 4 | sed 's/\(..\)/\1:/g; s/.$//')"`
+
 
 Vim
 -------------------
@@ -197,5 +203,10 @@ _______________________________________________
 
 - View key
 `cat .ssh/id_rsa.pub`
+
+_______________________________________________
+
+- Create file with 10mb
+`dd if=/dev/zero of=/path/my_file bs=10485760 count=1`
 
 _______________________________________________
