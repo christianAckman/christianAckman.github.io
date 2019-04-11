@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/icon.ico">
+    <script src="/js/marked.min.js"></script>
+</head>
+
+<body>
+    <div id="knowledge"></div>
+
+    <script>
+        fetch('/knowledge.md')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('knowledge').innerHTML = marked(data); 
+        });
+    </script>
+
+</body>
+
+</html>
