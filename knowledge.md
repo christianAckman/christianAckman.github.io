@@ -26,31 +26,29 @@ If you are on a different branch:
 
 ________________________________________________
 - Squash x commits into one commit
-
-1. `git squash`
-2. pick -> squash
-3. edit commit messages
+	`git squash`
+	Change `pick` to `s`
+	edit commit messages
 
 ________________________________________________
 - Squash commits into one commit
 
-# Create new branch
+- Create new branch
 `git checkout --orphan new-master master`
 
-# Add message
+- Add message
 `git commit -m "init"`
 
-# Overwrite the old branch
+- Overwrite the old branch
 `git branch -M new-master master`
 
 ________________________________________________
 
-- Rebase flow
-
-1. `git pull development`
-2. `git checkout branch`
-3. `git rebase development`
-4. `git push —force`
+- Rebase
+	`git pull development`
+	`git checkout branch`
+	`git rebase development`
+	`git push —force`
 
 ________________________________________________
 
@@ -151,6 +149,7 @@ _______________________________________________
 
 `docker run -d --mac-address="02:42:$(openssl rand -hex 4 | sed 's/\(..\)/\1:/g; s/.$//')"`
 
+_______________________________________________
 
 Vim
 -------------------
@@ -161,9 +160,108 @@ Vim
 - DELETE LINE: `dd`
 - SAVE: `ESC :wq` 
 - QUIT: `ESC :q`
+_______________________________________________
 
 Bash
 -------------------
+
+Tests: 
+- Equals: `-eq`
+- Not equals: `-ne`
+- Check empty string: `-z`
+- Less than: `-lt`
+- Greater than: `-gt`
+- Less than or equal: `-le`
+- Greater than or equal `-ge`
+_______________________________________________
+
+Commands
+-----------
+- List files `ls`
+- Go to diretory `cd`
+- Print current directory `pwd`
+- Open file `open`
+- Get description of file `file`
+- Current directory `.`
+- Create directory `mkdir`
+- Move file `mv`
+- Copy file `cp`
+- Copy dir `cp -r`
+- Print file `cat`
+- Follow file `tail -f`
+- File editors
+	- `nano`
+	- `vi`
+	- `vim`
+_______________________________________________
+
+Files
+-----------
+`ls -l`
+`-/---/---/---`
+`file/dir/symlink -- OWNER/GROUP/OTHER`
+
+
+_______________________________________________
+
+Permissions
+-----------
+- `chmod`
+- `chown`
+- `chgrp`
+<br>
+- User `chmod u=rwx`
+- Group `chmod g=rwx`
+- Other `chmod o=rwx`
+<br>
+- Make file executable for everyone `chmod +x`
+
+_______________________________________________
+
+Variables
+-----------
+
+- Set variable
+`myVariable=test`
+`echo $test`
+`echo ${test}`
+<br>
+- Unset variable
+`unset myVariable`
+<br>
+- Save command as variable
+`myVariable=ls`
+`${ls}`
+_______________________________________________
+
+- Important env variables
+`$USER`
+`$HOME`
+`$PATH`
+_______________________________________________
+
+- command substitution
+`myVariable=$(ls -l)`
+_______________________________________________
+
+- grep
+`grep myString`
+<br>
+
+- Ignore case sensitive
+`grep -i myString`
+<br>
+
+- Exclude grep 
+`grep -v myString`
+
+_______________________________________________
+
+- Get input
+`read myVariable`
+`read -p "please type input: " myVariable`
+`read -s myPassword`
+
 
 Linux
 -------------------
@@ -186,7 +284,7 @@ _______________________________________________
 - Modify bash profile
 `vi ~/.bash_profile`
 
-_______________________________________________
+<br>
 
 - Reload bash profile
 `. ~/.bash_profile`
@@ -210,3 +308,14 @@ _______________________________________________
 `dd if=/dev/zero of=/path/my_file bs=10485760 count=1`
 
 _______________________________________________
+
+Terminal
+-------------------
+`Ctrl+A`	Move cursor to the beginning of the command line.
+`Ctrl+C`	End a running program and return the prompt, see Chapter 4.
+`Ctrl+D`	Log out of the current shell session, equal to typing exit or logout.
+`Ctrl+E`	Move cursor to the end of the command line.
+`Ctrl+H`	Generate backspace character.
+`Ctrl+L`	Clear terminal.
+`Ctrl+R`	Search command history, see Section 3.3.3.4.
+`Ctrl+Z`	Suspend a program, see Chapter 4.
