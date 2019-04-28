@@ -1,7 +1,20 @@
-Knowledge Base
-========================
+## Knowledge Base
+_______________________________________________
 
-Git
+- [Git](#git)
+- [Docker](#docker)
+- [Vim](#vim)
+- [Bash](#bash)
+	- [Number Tests](#number-tests)
+	- [File Tests](#file-tests)
+	- [Functions](#functions)
+	- [Variables](#variables) 
+- [Linux](#linux)
+	- [Commands](#commands)
+	- [Permissions](#permissions)
+	- [Terminal](#terminal)
+
+## Git 
 -------------------
 
 - Git fix weird untracked file (can’t reset file): 
@@ -106,8 +119,9 @@ _______________________________________________
 
 _______________________________________________
 
-Docker
--------------------
+[top](#knowledge-base)
+
+## Docker
 
 - Clean docker completely:
 `docker system prune -a`
@@ -151,8 +165,9 @@ _______________________________________________
 
 _______________________________________________
 
-Vim
--------------------
+[top](#knowledge-base)
+
+## Vim
 
 - GO START LINE: `0`
 - GO END LINE: `$`
@@ -161,11 +176,10 @@ Vim
 - SAVE: `ESC :wq` 
 - QUIT: `ESC :q`
 _______________________________________________
+[top](#knowledge-base)
+## Bash
 
-Bash
--------------------
-
-Tests: 
+#### Number Tests
 - Equals: `-eq`
 - Not equals: `-ne`
 - Check empty string: `-z`
@@ -173,57 +187,106 @@ Tests:
 - Greater than: `-gt`
 - Less than or equal: `-le`
 - Greater than or equal `-ge`
+
+[top](#knowledge-base)
+#### File Tests
+- File exists: `-e`
+- Directory: `-d`
+- Readable: `-r`
+- Writable: `-w`
+- Executable: `-x`
+- File not empty: `-s`
+- Is a file: `-f`
+
+______________________________________________
+[top](#knowledge-base)
+#### Functions
+
+
+- Loop through an array
+```
+for i in {1,"two","three",4}
+do 
+	echo "${i}"
+	if [ "${i} -eq "three "]; then
+		break
+	fi
+done
+```
+
+- Loop `${x}` times
+```
+for i in {1..9}
+do 
+	echo "${i}"
+done
+```
+
+- Loop through directory
+```
+for i in *
+do
+	echo "${i}"
+done
+```
+
+- While Loop
+```
+number=1
+while [ $number -le 10 ];
+do
+	number=$(( number + 1 ))
+do
+```
+
+- Functions
+```
+function cook(){
+	local -r food=$1
+	return "cooked ${food}"
+}
+
+# call func w arg
+cook "pizza"
+
+# get result
+cooked_food=$?
+```
+
+- Case Statements
+```
+case $input_data in
+[0-1])
+		echo "0-1"
+		;;
+1[5-9])
+		echo "15-19"
+		;;
+[2-4] | [7-9] )
+		echo "2-4 | 7-9"
+		;;
+[a-z])
+ 		echo "Lowercase"
+ 		;;
+[A-Z])
+ 		echo "Uppercase"
+ 		;;
+*)
+ 		echo "None"
+ 		;;
+esac
+```
+
 _______________________________________________
 
-Commands
------------
-- List files `ls`
-- Go to diretory `cd`
-- Print current directory `pwd`
-- Open file `open`
-- Get description of file `file`
-- Current directory `.`
-- Create directory `mkdir`
-- Move file `mv`
-- Copy file `cp`
-- Copy dir `cp -r`
-- Print file `cat`
-- Follow file `tail -f`
-- File editors
-	- `nano`
-	- `vi`
-	- `vim`
+- Command status code: 
+`$?`
 _______________________________________________
-
-Files
------------
-`ls -l`
-`-/---/---/---`
-`file/dir/symlink -- OWNER/GROUP/OTHER`
-
-
-_______________________________________________
-
-Permissions
------------
-- `chmod`
-- `chown`
-- `chgrp`
-<br>
-- User `chmod u=rwx`
-- Group `chmod g=rwx`
-- Other `chmod o=rwx`
-<br>
-- Make file executable for everyone `chmod +x`
-
-_______________________________________________
-
-Variables
------------
+[top](#knowledge-base)
+#### Variables
 
 - Set variable
 `myVariable=test`
-`echo $test`
 `echo ${test}`
 <br>
 - Unset variable
@@ -232,6 +295,11 @@ Variables
 - Save command as variable
 `myVariable=ls`
 `${ls}`
+<br>
+- Get input
+`read myVariable`
+`read -p "please type input: " myVariable`
+`read -s myPassword`
 _______________________________________________
 
 - Important env variables
@@ -244,27 +312,9 @@ _______________________________________________
 `myVariable=$(ls -l)`
 _______________________________________________
 
-- grep
-`grep myString`
-<br>
 
-- Ignore case sensitive
-`grep -i myString`
-<br>
-
-- Exclude grep 
-`grep -v myString`
-
-_______________________________________________
-
-- Get input
-`read myVariable`
-`read -p "please type input: " myVariable`
-`read -s myPassword`
-
-
-Linux
--------------------
+[top](#knowledge-base)
+## Linux
 
 - Get filesystem access:
 
@@ -308,9 +358,49 @@ _______________________________________________
 `dd if=/dev/zero of=/path/my_file bs=10485760 count=1`
 
 _______________________________________________
+[top](#knowledge-base)
+#### Commands
+- List files `ls`
+- Go to diretory `cd`
+- Print current directory `pwd`
+- Open file `open`
+- Get description of file `file`
+- Current directory `.`
+- Create directory `mkdir`
+- Move file `mv`
+- Copy file `cp`
+- Copy dir `cp -r`
+- Print file `cat`
+- Follow file `tail -f`
+- Filter `grep myString`
+- Ignore case sensitive `grep -i myString`
+- Exclude grep `grep -v myString`
+- File editors
+	- `nano`
+	- `vi`
+	- `vim`
 
-Terminal
--------------------
+_______________________________________________
+[top](#knowledge-base)
+#### Permissions
+- `chmod`
+- `chown`
+- `chgrp`
+<br>
+- User `chmod u=rwx`
+- Group `chmod g=rwx`
+- Other `chmod o=rwx`
+<br>
+- Make file executable for everyone `chmod +x`
+
+
+`ls -l`
+`-/---/---/---`
+`file/dir/symlink -- OWNER/GROUP/OTHER`
+
+_______________________________________________
+[top](#knowledge-base)
+#### Terminal
 `Ctrl+A`	Move cursor to the beginning of the command line.
 `Ctrl+C`	End a running program and return the prompt, see Chapter 4.
 `Ctrl+D`	Log out of the current shell session, equal to typing exit or logout.
@@ -319,3 +409,6 @@ Terminal
 `Ctrl+L`	Clear terminal.
 `Ctrl+R`	Search command history, see Section 3.3.3.4.
 `Ctrl+Z`	Suspend a program, see Chapter 4.
+
+_______________________________________________
+
