@@ -7,6 +7,7 @@ _______________________________________________
 - [Bash](#bash)
 	- [Number Tests](#number-tests)
 	- [File Tests](#file-tests)
+	- [Loops](#loops)
 	- [Functions](#functions)
 	- [Variables](#variables) 
 - [Linux](#linux)
@@ -200,7 +201,7 @@ _______________________________________________
 
 ______________________________________________
 [top](#knowledge-base)
-#### Functions
+#### Loops
 
 
 - Loop through an array
@@ -239,7 +240,7 @@ do
 do
 ```
 
-- Functions
+#### Functions
 ```
 function cook(){
 	local -r food=$1
