@@ -9,6 +9,7 @@ _______________________________________________
 	- [File Tests](#file-tests)
 	- [Loops](#loops)
 	- [Functions](#functions)
+	- [Case Statements](#case-statements)
 	- [Variables](#variables) 
 - [Linux](#linux)
 	- [Commands](#commands)
@@ -240,6 +241,8 @@ do
 do
 ```
 
+______________________________________________
+[top](#knowledge-base)
 #### Functions
 ```
 function cook(){
@@ -254,7 +257,10 @@ cook "pizza"
 cooked_food=$?
 ```
 
-- Case Statements
+______________________________________________
+[top](#knowledge-base)
+#### Case Statements
+
 ```
 case $input_data in
 [0-1])
@@ -287,29 +293,44 @@ _______________________________________________
 #### Variables
 
 - Set variable
+
 `myVariable=test`
+
 `echo ${test}`
-<br>
+
+
 - Unset variable
+
 `unset myVariable`
-<br>
+
 - Save command as variable
+
 `myVariable=ls`
+
 `${ls}`
-<br>
+
 - Get input
+
 `read myVariable`
+
 `read -p "please type input: " myVariable`
+
 `read -s myPassword`
+
 _______________________________________________
 
 - Important env variables
+
 `$USER`
+
 `$HOME`
+
 `$PATH`
+
 _______________________________________________
 
 - command substitution
+
 `myVariable=$(ls -l)`
 _______________________________________________
 
@@ -320,62 +341,85 @@ _______________________________________________
 - Get filesystem access:
 
 `mount -o remount,rw /;`
+
 _______________________________________________
 
 - Bring process to foreground 
+
 `fg`
 
 _______________________________________________
 
 - Get RPi model
+
 `cat /proc/device-tree/model`
 
 _______________________________________________
 
 - Modify bash profile
+
 `vi ~/.bash_profile`
 
-<br>
 
 - Reload bash profile
+
 `. ~/.bash_profile`
 
 _______________________________________________
 
 - Get size of terminal
+
 `stty size`
 
 _______________________________________________
 
 - Generate SSH key
+
 `ssh-keygen -t rsa -C “your.email@email.com” -b 4096`
 
 - View key
+
 `cat .ssh/id_rsa.pub`
 
 _______________________________________________
 
 - Create file with 10mb
+
 `dd if=/dev/zero of=/path/my_file bs=10485760 count=1`
 
 _______________________________________________
 [top](#knowledge-base)
 #### Commands
-- List files `ls`
-- Go to diretory `cd`
-- Print current directory `pwd`
-- Open file `open`
-- Get description of file `file`
-- Current directory `.`
-- Create directory `mkdir`
-- Move file `mv`
-- Copy file `cp`
-- Copy dir `cp -r`
-- Print file `cat`
-- Follow file `tail -f`
-- Filter `grep myString`
-- Ignore case sensitive `grep -i myString`
-- Exclude grep `grep -v myString`
+- List files 
+`ls`
+- Go to diretory 
+`cd`
+- Print current directory 
+`pwd`
+- Open file 
+`open`
+- Get description of file 
+`file`
+- Current directory 
+`.`
+- Create directory 
+`mkdir`
+- Move file 
+`mv`
+- Copy file 
+`cp`
+- Copy dir 
+`cp -r`
+- Print file 
+`cat`
+- Follow file 
+`tail -f`
+- Filter 
+`grep myString`
+- Ignore case sensitive 
+`grep -i myString`
+- Exclude grep 
+`grep -v myString`
 - File editors
 	- `nano`
 	- `vi`
@@ -388,27 +432,39 @@ _______________________________________________
 - `chown`
 - `chgrp`
 <br>
-- User `chmod u=rwx`
-- Group `chmod g=rwx`
-- Other `chmod o=rwx`
-<br>
-- Make file executable for everyone `chmod +x`
+- User 
+`chmod u=rwx`
+- Group 
+`chmod g=rwx`
+- Other 
+`chmod o=rwx`
+- Make file executable for everyone 
+`chmod +x`
 
+```
+ls -l
 
-`ls -l`
-`-/---/---/---`
-`file/dir/symlink -- OWNER/GROUP/OTHER`
+-/---/---/---
+file/dir/symlink -- OWNER/GROUP/OTHER
+```
 
 _______________________________________________
 [top](#knowledge-base)
 #### Terminal
 `Ctrl+A`	Move cursor to the beginning of the command line.
+
 `Ctrl+C`	End a running program and return the prompt, see Chapter 4.
+
 `Ctrl+D`	Log out of the current shell session, equal to typing exit or logout.
+
 `Ctrl+E`	Move cursor to the end of the command line.
+
 `Ctrl+H`	Generate backspace character.
+
 `Ctrl+L`	Clear terminal.
+
 `Ctrl+R`	Search command history, see Section 3.3.3.4.
+
 `Ctrl+Z`	Suspend a program, see Chapter 4.
 
 _______________________________________________
